@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-function DataFetching() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://hn.algolia.com/api/v1/search?query=")
-      .then((res) => {
-        console.log(res);
-        setPosts(res.data.hits);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+function DataFetching(props) {
+  
 
   return (
-    <div>
-      {posts.map((post) => (
-        <p key={post.id}>{post.title}</p>
+    <div className="posts">
+      {props.dataObj.map((post) => (
+        <div>
+        <p key={post.id}>
+          {post.title}
+          <br />
+          {post.url}
+        </p>
+        </div>
       ))}
+      
     </div>
   );
 }

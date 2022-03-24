@@ -1,3 +1,23 @@
 .App {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: cursive;
+}
+
+.posts {
+    margin: 10px;
+}
+
+.search {
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+div {
+    border: 10px solid pink;
 }
